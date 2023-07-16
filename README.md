@@ -2,7 +2,8 @@
 
 Forked from https://github.com/Afwas/python-dds
 
-Modified to use the Windows DLL.
+Modified to use the Windows DLL from https://privat.bahnhof.se/wb758135/bridge/dll.html
+Add dds.dll to a new top-level project folder called dll. See example/dds.py #19 for the reference to it.
 
 ## Original Readme
 
