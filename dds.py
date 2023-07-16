@@ -16,7 +16,7 @@ limitations under the License."""
 
 from ctypes import *
 
-dds = cdll.LoadLibrary("libdds.so")
+dds = cdll.LoadLibrary("./dll/dds.dll")
 print('Loaded lib {0}'.format(dds))
 
 DDS_VERSION = 20700    
@@ -63,7 +63,7 @@ RETURN_SUIT_OR_RANK = -12
 TEXT_SUIT_OR_RANK = \
     "currentTrickSuit or currentTrickRank has wrong data"
 
-RETURN PLAYED_CARD = -13
+RETURN_PLAYED_CARD = -13
 TEXT_PLAYED_CARD = "Played card also remains in a hand"
 
 RETURN_CARD_COUNT = -14

@@ -1,4 +1,11 @@
 ## python-dds
+
+Forked from https://github.com/Afwas/python-dds
+
+Modified to use the Windows DLL.
+
+## Original Readme
+
 A ctypes implementation of dds-bridge in Python 3
 
 
