@@ -12,7 +12,7 @@ import time
 
 from constants import NORTH, EAST, SOUTH, WEST
 
-from deal_3NTE import deal_3NTE
+from constraints import deal_3NTE, deal_weak23
 
 SUITS = "SHDC"
 RANKS = "23456789TJQKA"
@@ -128,7 +128,7 @@ def main():
             hands = deal_hands(deck)
             stats = calc_hand_stats(hands)
 
-            if test_deal_constraints(deal_3NTE, hands, stats):
+            if test_deal_constraints(deal_weak23, hands, stats):
                 break
 
         print(PBN(hands))

@@ -18,3 +18,18 @@ def deal_3NTE(hands, stats):
     )
 
     return ok
+
+def deal_weak23(hands, stats):
+    hcp = stats["HCP"]
+    shape = stats["shape"]
+
+    # South weak 2 major
+
+    ok = (
+        hcp[SOUTH] <= 10
+        and hcp[SOUTH] >= 4
+        and re.search("6...|.6..", shape[SOUTH])
+        # todo: test for honours
+    )
+
+    return ok
