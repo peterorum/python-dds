@@ -7,8 +7,6 @@ import hands
 import functions
 
 dlPBN = dds.dealPBN()
-fut2 = dds.futureTricks()
-fut3 = dds.futureTricks()
 
 threadIndex = 0
 line = ctypes.create_string_buffer(80)
@@ -32,6 +30,8 @@ for handno in range(1):
     target = -1
     solutions = 3
     mode = 0
+    fut3 = dds.futureTricks()
+
     res = dds.SolveBoardPBN(
         dlPBN,
         target,
@@ -44,38 +44,7 @@ for handno in range(1):
         dds.ErrorMessage(res, line)
         print("DDS error {}".format(line.value.decode("utf-8")))
 
-    match3 = functions.CompareFut(
-        ctypes.pointer(fut3),
-        handno,
-        solutions)
-
-    solutions = 2
-    res = dds.SolveBoardPBN(
-        dlPBN,
-        target,
-        solutions,
-        mode,
-        ctypes.pointer(fut2),
-        0)
-    if res != dds.RETURN_NO_FAULT:
-        dds.ErrorMessage(res, line)
-        print("DDS error {}".format(line.value.decode("utf-8")))
-
-    match2= functions.CompareFut(
-        ctypes.pointer(fut2),
-        handno,
-        solutions)
-
-    line = "SolveBoardPBN, hand {}: solutions 3 {}, solutions 2{}".format(
-        handno + 1,
-        "OK" if match3 else "ERROR",
-        "OK" if match2 else "ERROR")
+    line = "SolveBoardPBN, hand {}:".format(
+        handno + 1)
 
     functions.PrintPBNHand(line, dlPBN.remainCards)
-
-    line = "solutions == 3"
-    functions.PrintFut(line, ctypes.pointer(fut3))
-    line = "solutions == 2"
-    functions.PrintFut(line, ctypes.pointer(fut2))
-
-
