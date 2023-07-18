@@ -48,3 +48,4 @@ for handno in range(1):
         handno + 1)
 
     functions.PrintPBNHand(line, dlPBN.remainCards)
+    functions.PrintFut(line, ctypes.pointer(fut3))

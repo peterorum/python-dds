@@ -163,6 +163,6 @@ cython_debug/
 
 private/
 .DS_Store
-*.code-*
 dll/
+*.code-*
 dump.txt
