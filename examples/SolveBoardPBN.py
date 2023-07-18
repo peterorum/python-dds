@@ -58,7 +58,7 @@ for handno in range(3):
         0)
     if res != dds.RETURN_NO_FAULT:
         dds.ErrorMessage(res, line)
-        print("DDS error {}".foramt(line.value.decode("utf-8")))
+        print("DDS error {}".format(line.value.decode("utf-8")))
 
     match2= functions.CompareFut(
         ctypes.pointer(fut2),
